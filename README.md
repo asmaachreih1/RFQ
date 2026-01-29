@@ -26,7 +26,6 @@ RFQ/
 -   **Backend**: PHP Yii2 Framework (REST API).
 -   **Database**: MySQL.
 -   **Real-time**: Custom PHP WebSocket Server (Ratchet/ReactPHP).
--   **Deployment**: Vercel (Frontend), VPS (Backend).
 
 ---
 
