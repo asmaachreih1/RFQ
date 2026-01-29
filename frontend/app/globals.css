@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --radius: var(--radius);
+}
+
+@layer base {
+  :root {
+    /* Palette: Warmer Indigo/Slate Theme */
+    /* Primary: Deep Indigo #2D3142 (Hue ~230) */
+    /* Secondary: Soft Slate #4F5D75 */
+    /* Accent: Warm Grey/Blue #BFC0C0 */
+
+    --background: 30 10% 99%;
+    /* Warm white (very slight ivory) */
+    --foreground: 225 20% 20%;
+    /* Warm Dark Grey/Blue */
+
+    --card: 0 0% 100%;
+    --card-foreground: 225 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 20% 20%;
+
+    --primary: 225 40% 35%;
+    /* Warmer, less electric Indigo */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 96%;
+    --secondary-foreground: 225 30% 20%;
+
+    --muted: 220 20% 96%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 30 20% 96%;
+    --accent-foreground: 225 30% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 225 40% 35%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Dark Mode based on #0F2854 */
+    --background: 218 50% 12%;
+    /* Darkened #0F2854 for better contrast */
+    --foreground: 194 74% 90%;
+    /* #BDE8F5 */
+
+    --card: 218 50% 15%;
+    --card-foreground: 194 74% 90%;
+
+    --popover: 218 50% 15%;
+    --popover-foreground: 194 74% 90%;
+
+    --primary: 209 60% 60%;
+    /* #4988C4 brightened */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 214 50% 30%;
+    --secondary-foreground: 194 74% 90%;
+
+    --muted: 214 40% 25%;
+    --muted-foreground: 214 20% 70%;
+
+    --accent: 214 50% 25%;
+    --accent-foreground: 194 74% 90%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 214 40% 25%;
+    --input: 214 40% 25%;
+    --ring: 209 60% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/20;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 dark:bg-black/40 backdrop-blur-lg border border-white/20 dark:border-white/10 shadow-sm supports-[backdrop-filter]:bg-white/60;
+  }
+
+  .glass-card {
+    @apply bg-white/50 dark:bg-black/30 backdrop-blur-md border border-white/30 dark:border-white/10 shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+
+  .glass-panel {
+    @apply bg-white/40 dark:bg-black/20 backdrop-blur-xl border border-white/20 dark:border-white/5 shadow-md;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400;
+  }
+
+  /* Custom animated background */
+  .bg-mesh {
+    background-color: hsla(var(--background));
+    background-image:
+      radial-gradient(at 0% 0%, rgb(194, 201, 214) 0, transparent 50%),
+      radial-gradient(at 50% 0%, rgb(152, 175, 206) 0, transparent 50%),
+      radial-gradient(at 100% 0%, rgb(74, 133, 188) 0, transparent 50%);
+  }
+
+  /* Light mode mesh - Cleaner, Whiter look with very subtle blue hints */
+  body:not(.dark) .bg-mesh {
+    background-color: #faf9f6;
+    /* Off-white */
+    background-image:
+      radial-gradient(at 0% 0%, hsla(225, 30%, 90%, 0.5) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(30, 40%, 90%, 0.5) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(225, 30%, 90%, 0.5) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(30, 40%, 90%, 0.5) 0px, transparent 50%);
+  }
+}
