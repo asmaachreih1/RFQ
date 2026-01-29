@@ -2,7 +2,7 @@
 
 A Real-time Request for Quotation (RFQ) platform connecting Users (Buyers) and Companies (Suppliers). Users can post requests for materials or services, and Companies can submit quotations in real-time.
 
-## 📂 Folder Structure
+##  Folder Structure
 
 ```
 RFQ/
