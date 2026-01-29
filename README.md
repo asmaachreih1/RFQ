@@ -20,7 +20,7 @@ RFQ/
 
 ---
 
-## 🚀 Technologies Used
+## Technologies Used
 
 -   **Frontend**: Next.js 14, TypeScript, Tailwind CSS, Shadcn/UI (Glassmorphism Design).
 -   **Backend**: PHP Yii2 Framework (REST API).
@@ -30,7 +30,7 @@ RFQ/
 
 ---
 
-## 🛠️ Setup Instructions
+## Setup Instructions
 
 ### 1. Database Setup
 1.  Create a MySQL database named `rfq_db`.
@@ -88,7 +88,7 @@ Prerequisites: Node.js 18+.
 
 ---
 
-## 🔑 Environment Variables & Configuration
+## Environment Variables & Configuration
 
 ### Frontend (`frontend/.env.local` or Vercel Config)
 Set these if deploying or if your local ports differ.
@@ -102,7 +102,7 @@ Configure your DB connection here.
 
 ---
 
-## 🧪 Demo Credentials
+## Demo Credentials
 
 Since the database is initially empty, please **Register** using the "Get Started" button on the homepage.
 
@@ -122,7 +122,7 @@ Recommended Test Scenarios:
 
 ---
 
-## 📡 WebSocket & Real-time Features
+## WebSocket & Real-time Features
 
 The platform uses a custom WebSocket server to handle real-time events.
 
@@ -132,7 +132,7 @@ The platform uses a custom WebSocket server to handle real-time events.
 
 ---
 
-## 📚 API Documentation
+## API Documentation
 
 The backend exposes a REST API at `/api`.
 
